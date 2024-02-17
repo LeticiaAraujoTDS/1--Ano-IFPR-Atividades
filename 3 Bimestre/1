@@ -1,0 +1,27 @@
+programa
+{
+	const 
+cadeia alfabeto[26] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+	funcao inicio()
+	{
+	
+		
+		criptografar("", 20)
+	}
+	funcao criptografar(cadeia texto, inteiro chave){
+
+		cadeia letra = "j"
+		
+		para(inteiro i=0; i < 26; i++){
+			se(letra == alfabeto[i]){
+				escreva("A letra ", letra, " está na posição ", i)
+				escreva(".\nA letra criptografada é ", alfabeto[i + chave], ".")
+				pare
+				}
+		     }
+		}
+	funcao descriptografar(){
+		
+		
+		}
+}

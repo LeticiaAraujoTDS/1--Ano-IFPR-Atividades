@@ -1,0 +1,45 @@
+programa
+{
+	inclua biblioteca Teclado 
+	inclua biblioteca Tipos  --> ti
+	inclua biblioteca Texto
+ --> t
+		cadeia alfabeto[26] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+		cadeia frase
+		cadeia converter
+		inteiro i = 1
+		inteiro a = 0 
+		inteiro chave
+		inteiro num_car
+		cadeia num_pos
+		inteiro pos_car
+	
+	funcao inicio()
+	{
+		codificar()
+	}
+	funcao codificar(){
+		
+		escreva("Qual frase gostaria de codificar?\n")
+		leia(frase)
+		escreva("Qual o valor da chave?")
+		leia(chave)
+
+		num_car = t.numero_caracteres(frase)
+		num_pos = ti.caracter_para_cadeia(t.obter_caracter(frase, i))
+		cadeia  d = 
+		
+		para(alfabeto[i] = num_pos; i <= num_car; a++){
+			i = i + chave
+			para(inteiro b = 0; num_pos < num_car ; i++){
+			converter =  alfabeto[a]
+			escreva(converter)
+		}
+			}
+	}
+	
+	funcao decodificar(){
+		
+		}
+	
+}

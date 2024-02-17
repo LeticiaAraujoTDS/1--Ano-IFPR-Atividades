@@ -1,0 +1,20 @@
+programa
+{
+
+	funcao inicio()
+	{
+		real resultado = media(100, 90)
+		escreva(resultado)
+	}
+	funcao inteiro soma(inteiro a, inteiro b){
+		inteiro soma1
+		soma1 = a + b
+		retorne soma1
+		}
+	funcao real media(inteiro a, inteiro b){
+		real media1 
+		media1 = soma(a, b)/2
+		retorne media1
+		
+		}
+}

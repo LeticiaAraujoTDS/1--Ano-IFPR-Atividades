@@ -1,0 +1,182 @@
+programa
+{
+	inclua biblioteca Util --> u
+	inclua biblioteca Tipos --> tip
+	inclua biblioteca Texto --> t
+	const cadeia alfabeto[27] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", " "}
+	
+	
+	funcao inicio()
+	{
+		cadeia frase
+		inteiro chave
+		inteiro acao, decisao1
+
+		escreva("Olá, bem-vindo ao código da Cifra de César!!!\n")
+		
+		escreva("Se deseja criptografar sua mensagem, digite 1.\nE se deseja descriptografar, digite 2 .\n")
+		leia(acao)
+
+		se(acao == 1){
+			escreva("Você escolheu criptografar.\n")
+			escreva("Escreva a sua mensagem (em letras minúsculas):\n")
+			leia(frase)
+			escreva("Digite a chave :\n")
+			leia(chave)
+			escreva("\n")
+			criptografar(frase, chave)
+			escreva("\n")
+			
+			
+			
+			}// fim se ação 1 (criptografar)
+			senao se(acao == 2){
+				escreva("Você escolheu descriptografar.\n")
+				escreva("Escreva a sua mensagem (em letras minúsculas): \n")
+				leia(frase)
+				escreva("Caso tenha a chave da mensagem digite-a. Caso não tenha digite 0.\n")
+				leia(chave)
+				se(chave != 0){// se para descriptografar com cahve
+					
+					limpa()
+					descriptografar (frase, chave)
+					
+					} senao{// se para descriptografar sem chave
+						
+						sem_chave(frase, chave)
+						
+						}//fim senao
+				}// fim se decisão é descriptografar
+
+	}
+	funcao criptografar(cadeia texto, inteiro chave){
+
+		cadeia letra = " "
+		caracter letra_caracter = ' '
+		inteiro posicao
+		inteiro numero_letra_frase = t.numero_caracteres(texto)
+		logico esta_no_alfabeto 
+
+		//para percorrer cada uma das letras 
+		para(inteiro h=0; h < numero_letra_frase; h++){
+			
+			letra_caracter = t.obter_caracter(texto, h)
+
+			letra = tip.caracter_para_cadeia(letra_caracter)
+			
+			esta_no_alfabeto = falso
+			
+		//para percorrer todo o alfabeto em busca da posição da letra
+		para(inteiro i=0; i < 26; i++){
+			
+			se(letra == alfabeto[i]){
+				
+				posicao = i + chave
+				
+				posicao = posicao % 26
+				
+				escreva(alfabeto[posicao])
+				
+				esta_no_alfabeto = verdadeiro
+				
+				pare
+				
+				}
+		     }
+		     se(esta_no_alfabeto == falso){
+		     	
+		     	escreva(letra)
+		     	
+		     	}
+		}
+	}//fim da função criptografar
+	
+	funcao descriptografar(cadeia texto, inteiro chave){
+		
+		cadeia letra = " "
+		caracter letra_caracter = ' '
+		inteiro posicao
+		inteiro numero_letra_frase = t.numero_caracteres(texto)
+		logico esta_no_alfabeto 
+
+		//para percorrer cada uma das letras 
+		para(inteiro h=0; h < numero_letra_frase; h++){
+			
+			letra_caracter = t.obter_caracter(texto, h)
+
+			letra = tip.caracter_para_cadeia(letra_caracter)
+			
+			esta_no_alfabeto = falso
+			
+		//para percorrer todo o alfabeto em busca da posição da letra
+		para(inteiro i=0; i < 26; i++){
+			
+			se(letra == alfabeto[i]){
+				
+				posicao = i - chave
+				
+				se(posicao < 0){
+
+					posicao = posicao + 26
+					
+					}
+					
+				escreva(alfabeto[posicao])
+				
+				esta_no_alfabeto = verdadeiro
+				
+				pare
+				
+				}
+			
+		     }
+		     se(esta_no_alfabeto == falso){
+		     	
+		     	escreva(letra)
+		     	
+		     	}
+		
+			}
+	
+		}//fim da função descriptografar	
+		funcao sem_chave(cadeia frase, inteiro chave){
+		cadeia letra = " "
+		caracter letra_caracter = ' '
+		inteiro posicao
+		inteiro numero_letra_frase = t.numero_caracteres(frase)
+		logico esta_no_alfabeto = falso
+
+		
+		para(chave = 0; chave < 26; chave++)
+		{	
+			escreva("Chave: ",chave+1,"\n")
+			
+			para(inteiro j = 0; j < numero_letra_frase; j++)
+			{
+				esta_no_alfabeto = falso
+			
+				letra_caracter = t.obter_caracter(frase, j)
+				letra = tip.caracter_para_cadeia(letra_caracter)
+		
+			
+				para(inteiro i = 0; i < 26; i++)
+				{	
+					se(letra == alfabeto[i])
+					{
+						posicao = (i - chave + 26) % 26
+						escreva(alfabeto[posicao])
+						esta_no_alfabeto = verdadeiro
+						
+					}//fim se
+				}//fim para 2
+				se(esta_no_alfabeto == falso){
+			 	escreva(letra)
+		      	}//fim se 
+			 }//fim para 1
+			 
+		escreva("\n")
+			
+		}//fim para chave
+	}//fim funcao sem chave
+		
+}
