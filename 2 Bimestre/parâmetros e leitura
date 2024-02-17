@@ -1,0 +1,14 @@
+programa
+{
+	inclua biblioteca Texto --> t 
+	
+	funcao inicio()
+	{
+		cadeia nome = "Jefferson"
+		converterMaiuscula(nome)
+		escreva(nome)
+	}
+	funcao converterMaiuscula(cadeia &nome){
+		 nome = t.caixa_alta(nome)
+		}
+}

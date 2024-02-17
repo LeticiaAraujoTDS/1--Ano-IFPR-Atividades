@@ -1,0 +1,33 @@
+programa
+{
+	inclua biblioteca Arquivos --> a
+	
+	funcao inicio()
+	{
+		lista_afazeres()
+		ler_arq()
+	}
+	funcao lista_afazeres(){
+		
+		cadeia afazer = " "
+		inteiro arq = a.abrir_arquivo("./LISTA_AFAZERES.txt", a.MODO_ESCRITA)
+		enquanto(afazer != ""){
+		escreva("Qual sua lista de afzeres?\n")
+		leia(afazer)
+		a.escrever_linha(afazer, arq)
+		}
+		a.fechar_arquivo(arq)
+		
+		}
+	funcao ler_arq(){
+		inteiro arquivo = a.abrir_arquivo("./LISTA_AFAZERES.txt", a.MODO_LEITURA)
+		enquanto(nao a.fim_arquivo(arquivo)){
+			cadeia linha = a.ler_linha(arquivo)
+			escreva(linha, "\n")
+			
+			}
+		
+		}
+		
+		
+}
