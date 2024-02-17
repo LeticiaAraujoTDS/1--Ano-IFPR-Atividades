@@ -1,0 +1,22 @@
+
+<?php
+
+    $musicas = [];//tipo de fazer uma lista
+
+    var_dump($musicas);//descobrir o tipo da variável
+.
+
+<?php 
+
+
+    //versão 1
+
+    print "***TOP FIVE HERÓIS DO MUNDO***";
+
+    $herois = array('Batmam', 'Goku', 'Thor', 'Viúva Negra', 'Groot');
+
+    print_r($herois); //o print normal não consegue converter o array em string, então não executa
+    die();//para que o códifo só execute um determinado comando, porém ele para tudo, mata geral mesmo
+  
+    print "ferrari";
+      

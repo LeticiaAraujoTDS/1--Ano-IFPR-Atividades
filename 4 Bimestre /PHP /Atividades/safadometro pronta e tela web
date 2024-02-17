@@ -1,0 +1,58 @@
+safadao.php
+<?php
+
+    $dia = $_REQUEST['campo_dia'];//mudança para pegar o valor da variável diretamente do site
+    $mes = $_REQUEST['campo_mes'];
+    $ano = $_REQUEST['campo_ano'];
+
+    safadometro($dia, $mes, $ano);
+
+
+    function safadometro(int $dia , int $mes , int $ano){
+
+        $safadeza = 0;
+
+        $safadeza = somatorio($mes)+($ano/100)*(50-$dia);
+
+        $anjo = 0;
+
+        $anjo = 100 - $safadeza;
+
+        print "$anjo% anjo perfeito, mas aquele $safadeza% é vagabundo.";
+
+    }
+    function somatorio(int $mes){
+
+        $soma = 0;
+
+        $soma = $mes * (($mes + 1)/2);
+
+        return $soma;
+
+    }
+
+  safadometro_tela.php
+
+  <h1>Safadômetro</h1>
+
+<form action = "safadao.php">
+
+    <input type="text" placeholder = "Informe o dia" name="campo_dia">
+    <br />
+    <input type="text" placeholder = "Informe o mês" name="campo_mes">
+    <br />
+    <input type="text" placeholder = "Informe o ano" name="campo_ano">
+    <br />
+    <input type = "submit" value = "calcular">
+
+    <img src="https://br.web.img2.acsta.net/c_310_420/pictures/17/06/22/21/16/082721.jpg">
+
+<form>
+
+terminal
+lab@lab:~/leticia 1 tds$ php -S localhost:8082
+[Fri Oct  6 14:55:57 2023] PHP 8.1.2-1ubuntu2.14 Development Server (http://localhost:8082) started
+
+tela
+link : http://localhost:8080/safadao.php?campo_dia=23&campo_mes=01&campo_ano=07
+97.11% anjo perfeito, mas aquele 2.89% é vagabundo.

@@ -1,0 +1,53 @@
+<?php
+
+    print "***TOP FIVE HERÓIS DO MUNDO***\n";
+
+    $herois = ['Batmam', 'Goku', 'Thor', 'Viúva Negra', 'Groot', 'Naruto'];
+    $herois [] = 'Capitão Gancho';
+
+    for($i = 0; $i <= sizeof($herois); $i++) {// sizeof ou count = conta os elementos de uma lista
+            print ($i + 1) . " lugar: " . $herois[$i] . "\n";// usar o ponto ( . ) como se fosse uma vígula
+            //pesquisar array unshift, e outros
+        }
+*********************************************************************************************
+<?php
+
+    print "***TOP FIVE HERÓIS DO MUNDO***\n";
+
+    $herois = ['Batmam', 'Goku', 'Thor', 'Viúva Negra', 'Groot', 'Naruto'];
+    $herois [6] = 'Capitão Gancho';
+
+    array_unshift($herois, "Oscar Piastri");// coloca o elemento em 1 lugar na lista
+
+    for($i = 0; $i <= sizeof($herois); $i++) {
+            print ($i + 1) . " lugar: $herois[$i] \n";
+        }
+        ************************************************************************************
+<?php
+
+    print "***TOP FIVE HERÓIS DO MUNDO***\n";
+
+    $herois = ['Batmam', 'Goku', 'Thor', 'Viúva Negra', 'Groot', 'Naruto'];
+    $herois [6] = 'Capitão Gancho';
+
+    shuffle($herois);
+
+    for($i = 0; $i <= sizeof($herois); $i++) {
+            print ($i + 1) . " lugar: $herois[$i] \n";
+        }
+
+***********************************************************************************************
+<?php
+
+    print "***TOP FIVE HERÓIS DO MUNDO***\n";
+
+    $herois = ['Batmam', 'Goku', 'Thor', 'Viúva Negra', 'Groot', 'Naruto'];
+    $herois [6] = 'Capitão Gancho';
+
+    sort($herois);
+
+    for($i = 0; $i <= sizeof($herois); $i++) {
+            print ($i + 1) . " lugar: $herois[$i] \n";
+        }
+        
+        

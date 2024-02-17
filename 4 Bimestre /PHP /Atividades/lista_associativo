@@ -1,0 +1,26 @@
+<?php
+
+    $fruta = array(
+        "cor" => "vermelho",
+        "sabor" => "doce",
+        "formato" => "redonda",
+        "nome" => "maça"
+    );
+
+    print_r ($fruta);
+
+*****************************************************
+<?php
+
+    $fruta = array(
+        "cor" => "vermelho",
+        "sabor" => "doce",
+        "formato" => "redonda",
+        "nome" => "maça"
+    );
+
+    foreach ($fruta as $caracteristicas) {//para percorrer cada um dos elementos da lista
+        print ($caracteristicas . "\n");//tem que colocar os parenteses para poder colocar o ponto e o \n, para que a lista de 1 elemento por linha
+    }
+
+terminal
